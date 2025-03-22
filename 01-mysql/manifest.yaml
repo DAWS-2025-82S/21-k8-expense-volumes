@@ -85,3 +85,25 @@ spec:
 # kubectl apply -f 01-namespace.yaml
 
 # kubectl apply -f manifest.yaml 
+
+# use kubens  to set namespace
+
+# k9s installation
+# ----------------
+# https://github.com/derailed/k9s
+
+# curl -sS https://webinstall.dev/k9s | bash  --- command to install k9s
+
+# Open new tab and Type k9s 
+
+# Type shift+:(pod or service or namespace)
+
+# Type shift+:+pod and then 
+# type s to get pod shell access
+# type l to get pod logs
+
+
+# mysql -u root -pExpenseApp@1
+# show databases;
+# use transactions;
+# show tables;

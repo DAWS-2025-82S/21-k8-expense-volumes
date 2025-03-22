@@ -150,3 +150,24 @@ spec:
 #       target:
 #         type: Utilization
 #         averageUtilization: 5
+
+
+# kubectl apply -f manifest.yaml  
+
+# Mount nginx.conf file as volume using ConfigMap 
+
+# kubectl top pod
+
+# kubectl top pod -n expense
+
+# kubectl top hpa -n expense
+
+# while true;do curl <ALB_URN>;done  --- this will not send parallel requests
+
+# Apache Bench
+# ------------
+# Tool  to send parallel requests
+
+# sudo yum install httpd-tools -yaml
+# ab --help
+# ab -n 50000 -c 100 <ALB_URL>  --- / at the end is required
