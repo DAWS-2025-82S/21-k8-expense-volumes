@@ -168,12 +168,29 @@ spec:
 # ------------
 # Tool  to send parallel requests
 
-# sudo yum install httpd-tools -yaml
+# sudo yum install httpd-tools -y
 # ab --help
 # ab -n 50000 -c 100 <ALB_URL>  --- / at the end is required
+
+# kubectl apply -f 01-namespace.yaml
+# kubectl apply -f 03-ebs-sc.yaml
+# kubectl apply -f 01-mysql/manifest.yaml
+# kubectl apply -f 02-backend/manifest.yaml
+# kubectl apply -f 03-frontend/manifest.yaml 
+
 
 # kubectl delete -f 01-mysql/manifest.yaml
 # kubectl delete -f 02-backend/manifest.yaml
 # kubectl delete -f 03-frontend/manifest.yaml 
 # kubectl delete -f 03-ebs-sc.yaml
-# kubectl delete -f 01-namespace.yaml
+
+# If we delete the PV and PVC  with below command
+#   kubectl delete pv,pvc --all -A
+
+# New Volumes will be created again
+
+# If we delete only storage class new volumes are not created 
+# and pods will connect to existing volumes
+
+# Test the app 
+# http://<LB_URN>:80/

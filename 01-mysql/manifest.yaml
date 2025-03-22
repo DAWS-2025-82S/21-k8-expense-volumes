@@ -109,7 +109,7 @@ spec:
 # Type shift+:+pod and then 
 # type s to get pod shell access
 # type l to get pod logs
-
+# type Esc to exit
 
 # mysql -u root -pExpenseApp@1
 # show databases;
