@@ -96,7 +96,7 @@ spec:
               path: nginx.conf
       containers:
       - name: nginx
-        image: joindevops/frontend:1.2.0
+        image: dath1/frontend:1.2.0
         resources:
           # soft limit
           requests:
@@ -171,3 +171,10 @@ spec:
 # sudo yum install httpd-tools -yaml
 # ab --help
 # ab -n 50000 -c 100 <ALB_URL>  --- / at the end is required
+
+# kubectl delete -f 01-mysql/manifest.yaml
+# kubectl delete -f 02-backend/manifest.yaml
+# kubectl delete -f 03-frontend/manifest.yaml 
+
+# kubectl apply -f 03-ebs-sc.yaml
+# kubectl apply -f 01-namespace.yaml
