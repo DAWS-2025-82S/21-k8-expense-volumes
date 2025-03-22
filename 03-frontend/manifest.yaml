@@ -130,26 +130,26 @@ spec:
   - protocol: TCP
     port: 80 # service port
     targetPort: 8080
-# ---
-# apiVersion: autoscaling/v2
-# kind: HorizontalPodAutoscaler
-# metadata:
-#   name: frontend
-#   namespace: expense
-# spec:
-#   scaleTargetRef:
-#     apiVersion: apps/v1
-#     kind: Deployment
-#     name: frontend
-#   minReplicas: 1
-#   maxReplicas: 10
-#   metrics:
-#   - type: Resource
-#     resource:
-#       name: cpu
-#       target:
-#         type: Utilization
-#         averageUtilization: 5
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: frontend
+  namespace: expense
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: frontend
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 5
 
 
 # kubectl apply -f manifest.yaml  
@@ -160,7 +160,7 @@ spec:
 
 # kubectl top pod -n expense
 
-# kubectl top hpa -n expense
+# kubectl get hpa -n expense
 
 # while true;do curl <ALB_URN>;done  --- this will not send parallel requests
 
@@ -175,6 +175,5 @@ spec:
 # kubectl delete -f 01-mysql/manifest.yaml
 # kubectl delete -f 02-backend/manifest.yaml
 # kubectl delete -f 03-frontend/manifest.yaml 
-
-# kubectl apply -f 03-ebs-sc.yaml
-# kubectl apply -f 01-namespace.yaml
+# kubectl delete -f 03-ebs-sc.yaml
+# kubectl delete -f 01-namespace.yaml

@@ -84,6 +84,14 @@ spec:
 
 # kubectl apply -f 01-namespace.yaml
 
+# Create Dynamic EBS
+# ----------------
+# 1. install EBS CSI drivers
+# 2. give permissions to worker nodes
+# 3. create storage class
+
+# kubectl apply -f 03-ebs-sc.yaml
+
 # kubectl apply -f manifest.yaml 
 
 # use kubens  to set namespace
